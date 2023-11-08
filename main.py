@@ -64,5 +64,8 @@ while number != 0:
             amount = int(input("How much you will withdraw?"))
             print(withdraw(amount))
             break
-        
 
+        case 2:
+            amount = int(input("How much you will deposit?"))
+            print(deposit(amount))
+            break
