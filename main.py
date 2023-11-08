@@ -34,3 +34,11 @@ def withdraw(amount) -> str:
         result = f"Draw out R${amount}"
         extract.append(result)
         return result
+
+
+def deposit(amount) -> str:
+    if amount > 0:
+        main.balance += amount
+        return f"{name} deposited R${amount}"
+    else:
+        return "Amount incorrect"
