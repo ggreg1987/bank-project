@@ -23,21 +23,21 @@ def menu() -> str:
     """
 
 
-def withdraw(amount) -> str:
-    if main.withdraw_limit < amount < 0 < main.withdraw_limit_per_day:
+def withdraw(amounts) -> str:
+    if main.withdraw_limit < amounts < 0 < main.withdraw_limit_per_day:
         return "Amount incorrect"
     else:
         main.withdraw_limit_per_day -= 1
         main.balance -= amount
-        result = f"Draw out R${amount}"
+        result = f"Draw out R${amounts}"
         extracts.append(result)
         return result
 
 
-def deposit(amount) -> str:
+def deposit(amounts) -> str:
     if amount > 0:
         main.balance += amount
-        result = f"deposited R${amount}"
+        result = f"deposited R${amounts}"
         extracts.append(result)
         return result
     else:
@@ -53,10 +53,10 @@ def extract():
 
 print(wellcome())
 print(menu())
-number = int(input())
 
-while number != 0:
 
+while True:
+    number = int(input())
     match number:
         case 1:
             amount = int(input("How much you will withdraw?\n"))
@@ -74,8 +74,10 @@ while number != 0:
 
         case 0:
             print("Thank you for use DIO's Bank!!")
-            number = 0
+            False
 
         case _:
             print("Option incorrect")
             break
+
+
