@@ -73,12 +73,4 @@ while True:
 
         case 0:
             print("Thank you for use DIO's Bank!!")
-            number = 0
-            break
-
-        case _:
-            print("Option incorrect")
-            break
-
-
-
+            False
