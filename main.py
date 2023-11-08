@@ -5,7 +5,7 @@ name = input("What's your name?\n")
 balance = 0
 withdraw_limit = 500
 withdraw_limit_per_day = 3
-extract = []
+extracts = []
 
 
 def wellcome() -> str:
@@ -32,7 +32,7 @@ def withdraw(amount) -> str:
         main.withdraw_limit_per_day -= 1
         main.balance -= amount
         result = f"Draw out R${amount}"
-        extract.append(result)
+        extracts.append(result)
         return result
 
 
@@ -40,9 +40,13 @@ def deposit(amount) -> str:
     if amount > 0:
         main.balance += amount
         result = f"{name} deposited R${amount}"
-        extract.append(result)
+        extracts.append(result)
         return result
     else:
         return "Amount incorrect"
 
+
+def extract():
+    for ex in extracts:
+        print(ex)
 
