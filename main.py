@@ -11,3 +11,14 @@ def wellcome() -> str:
     Wellcome to the DIO's Bank {name.title()}
     """
 
+
+def menu() -> str:
+    return
+    """
+    [1] - Withdraw
+    [2] - Deposit
+    [3] - Extract
+    [0] - Exit
+    """
+
+
