@@ -73,5 +73,7 @@ while number != 0:
         case 3:
             extract()
             break
-        
 
+        case 0:
+            print("Thank you for use DIO's Bank!!")
+            number = 0
