@@ -1,3 +1,5 @@
+import main
+
 name = input("What's your name?\n")
 
 balance = 0
@@ -27,8 +29,7 @@ def withdraw(amount) -> str:
     if 0 > amount > withdraw_limit:
         return "Amount incorrect"
     else:
-        balance - amount
+        main.balance -= amount
         result = f"Draw out R${amount}"
         extract.append(result)
         return result
-
