@@ -1,4 +1,4 @@
-name = input("What's your name?")
+name = input("What's your name?\n")
 
 balance = 0
 withdraw_limit = 500
@@ -7,15 +7,15 @@ extract = []
 
 
 def wellcome() -> str:
-    return
-    f"""
-    Wellcome to the DIO's Bank {name.title()}
+    return f"""
+    ************Wellcome to the DIO's Bank {name.title()}*************
     """
 
 
 def menu() -> str:
-    return
-    """
+    return """
+    ######Choose an Option######
+    
     [1] - Withdraw
     [2] - Deposit
     [3] - Extract
@@ -23,7 +23,12 @@ def menu() -> str:
     """
 
 
-
-
-
+def withdraw(amount) -> str:
+    if 0 > amount > withdraw_limit:
+        return "Amount incorrect"
+    else:
+        balance - amount
+        result = f"Draw out R${amount}"
+        extract.append(result)
+        return result
 
