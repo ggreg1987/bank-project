@@ -51,12 +51,11 @@ def extract():
 
 ####################################################################################################
 
-print(wellcome())
-print(menu())
-
-
 while True:
+    print(wellcome())
+    print(menu())
     number = int(input())
+
     match number:
         case 1:
             amount = int(input("How much you will withdraw?\n"))
@@ -74,10 +73,12 @@ while True:
 
         case 0:
             print("Thank you for use DIO's Bank!!")
-            False
+            number = 0
+            break
 
         case _:
             print("Option incorrect")
             break
+
 
 
