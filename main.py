@@ -1,7 +1,5 @@
 import main
 
-name = input("What's your name?\n")
-
 balance = 0
 withdraw_limit = 500
 withdraw_limit_per_day = 3
@@ -9,8 +7,8 @@ extracts = []
 
 
 def wellcome() -> str:
-    return f"""
-    ************Wellcome to the DIO's Bank {name.title()}*************
+    return """
+    ************Wellcome to the DIO's Bank*************
     """
 
 
@@ -39,7 +37,7 @@ def withdraw(amount) -> str:
 def deposit(amount) -> str:
     if amount > 0:
         main.balance += amount
-        result = f"{name} deposited R${amount}"
+        result = f"deposited R${amount}"
         extracts.append(result)
         return result
     else:
@@ -61,12 +59,12 @@ while number != 0:
 
     match number:
         case 1:
-            amount = int(input("How much you will withdraw?"))
+            amount = int(input("How much you will withdraw?\n"))
             print(withdraw(amount))
             break
 
         case 2:
-            amount = int(input("How much you will deposit?"))
+            amount = int(input("How much you will deposit?\n"))
             print(deposit(amount))
             break
 
@@ -77,3 +75,7 @@ while number != 0:
         case 0:
             print("Thank you for use DIO's Bank!!")
             number = 0
+
+        case _:
+            print("Option incorrect")
+            break
