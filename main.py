@@ -50,3 +50,19 @@ def extract():
     for ex in extracts:
         print(ex)
 
+
+####################################################################################################
+
+print(wellcome())
+print(menu())
+number = int(input())
+
+while number != 0:
+
+    match number:
+        case 1:
+            amount = int(input("How much you will withdraw?"))
+            print(withdraw(amount))
+            break
+        
+
