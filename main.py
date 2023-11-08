@@ -19,7 +19,7 @@ def menu() -> str:
     [1] - Withdraw
     [2] - Deposit
     [3] - Extract
-    [0] - Exit
+    [4] - Exit
     """
 
 
@@ -50,27 +50,29 @@ def extract():
 
 
 ####################################################################################################
+print(wellcome())
+print(menu())
+number = 0
 
-while True:
-    print(wellcome())
-    print(menu())
+while number != 4:
     number = int(input())
 
-    match number:
-        case 1:
-            amount = int(input("How much you will withdraw?\n"))
-            print(withdraw(amount))
-            break
+    if number == 1:
+        amount = int(input("How much you will withdraw?\n"))
+        print(withdraw(amount))
 
-        case 2:
-            amount = int(input("How much you will deposit?\n"))
-            print(deposit(amount))
-            break
+    elif number == 2:
+        amount = int(input("How much you will deposit?\n"))
+        print(deposit(amount))
 
-        case 3:
-            extract()
-            break
+    elif number == 3:
+        extract()
 
-        case 0:
-            print("Thank you for use DIO's Bank!!")
-            False
+    elif number == 4:
+        print("Thanks you to use DIO's Bank!!")
+        break
+
+    else:
+        print("Incorrect Option")
+
+    print(menu())
