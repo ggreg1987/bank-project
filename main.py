@@ -26,6 +26,7 @@ def menu() -> str:
 def withdraw(amounts) -> str:
     global withdraw_limit
     global withdraw_limit_per_day
+    global balance
     if withdraw_limit < amounts < 0 == withdraw_limit_per_day:
         return "Amount incorrect or limit per day"
     else:
@@ -38,6 +39,7 @@ def withdraw(amounts) -> str:
 
 def deposit(amounts) -> str:
     global balance
+    global extracts
     if amount > 0:
         balance += amount
         result = f"deposited R${amounts}"
