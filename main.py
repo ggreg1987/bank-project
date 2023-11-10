@@ -27,7 +27,7 @@ def withdraw(amounts) -> str:
     global withdraw_limit
     global withdraw_limit_per_day
     global balance
-    if withdraw_limit < amounts < 0 == withdraw_limit_per_day:
+    if amounts > withdraw_limit or amounts < 0 or withdraw_limit_per_day == 0:
         return "Amount incorrect or limit per day"
     else:
         withdraw_limit_per_day -= 1
@@ -64,6 +64,7 @@ while number != 4:
 
     if number == 1:
         amount = int(input("How much you will withdraw?\n"))
+        print(f"limite diário é: {withdraw_limit_per_day}")
         print(withdraw(amount))
 
     elif number == 2:
