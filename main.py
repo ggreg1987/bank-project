@@ -61,24 +61,24 @@ def main():
 
     while number != 4:
         number = int(input())
+        match number:
+            case 1:
+                amount = int(input("How much you will withdraw?\n"))
+                print(withdraw(amount))
 
-        if number == 1:
-            amount = int(input("How much you will withdraw?\n"))
-            print(withdraw(amount))
+            case 2:
+                amount = int(input("How much you will deposit?\n"))
+                print(deposit(amount))
 
-        elif number == 2:
-            amount = int(input("How much you will deposit?\n"))
-            print(deposit(amount))
+            case 3:
+                extract()
 
-        elif number == 3:
-            extract()
+            case 4:
+                print("Thanks you to use DIO's Bank!!")
+                break
 
-        elif number == 4:
-            print("Thanks you to use DIO's Bank!!")
-            break
-
-        else:
-            print("Incorrect Option")
+            case _:
+                print("Incorrect Option")
 
         print(menu())
 
