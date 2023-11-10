@@ -40,8 +40,8 @@ def withdraw(amounts) -> str:
 def deposit(amounts) -> str:
     global balance
     global extracts
-    if amount > 0:
-        balance += amount
+    if amounts > 0:
+        balance += amounts
         result = f"deposited R${amounts}"
         extracts.append(result)
         return result
@@ -55,30 +55,32 @@ def extract():
 
 
 ####################################################################################################
-print(wellcome())
-print(menu())
-number = 0
-
-while number != 4:
-    number = int(input())
-
-    if number == 1:
-        amount = int(input("How much you will withdraw?\n"))
-        print(f"limite diário é: {withdraw_limit_per_day}")
-        print(withdraw(amount))
-
-    elif number == 2:
-        amount = int(input("How much you will deposit?\n"))
-        print(deposit(amount))
-
-    elif number == 3:
-        extract()
-
-    elif number == 4:
-        print("Thanks you to use DIO's Bank!!")
-        break
-
-    else:
-        print("Incorrect Option")
-
+def main():
+    print(wellcome())
     print(menu())
+    number = 0
+
+    while number != 4:
+        number = int(input())
+
+        if number == 1:
+            amount = int(input("How much you will withdraw?\n"))
+            print(withdraw(amount))
+
+        elif number == 2:
+            amount = int(input("How much you will deposit?\n"))
+            print(deposit(amount))
+
+        elif number == 3:
+            extract()
+
+        elif number == 4:
+            print("Thanks you to use DIO's Bank!!")
+            break
+
+        else:
+            print("Incorrect Option")
+
+        print(menu())
+
+main()
